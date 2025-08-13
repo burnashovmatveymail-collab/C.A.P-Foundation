@@ -4,7 +4,54 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>C.A.P Foundation — Secure Portal</title>
-
+<style>
+  :root{
+    --bg:#061107;--panel:#08140a;--grid:#0f2612;--accent:#5df37a;--accent2:#32c95a;
+    --text:#d7f7df;--muted:#8fb89a;--danger:#ff5b5b;--card:#0b1a0d;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:
+    radial-gradient(1200px 600px at 50% -10%,rgba(27,74,38,0.25),transparent 70%),
+    linear-gradient(180deg,#061107 0%, #040b06 100%);
+    color:var(--text);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+    min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:24px}
+  .wrap{width:1120px;max-width:98%;background:
+    linear-gradient(180deg,rgba(93,243,122,0.06),rgba(0,0,0,0.22));
+    border:1px solid rgba(93,243,122,0.18);border-radius:12px;padding:16px 16px 22px;
+    box-shadow:0 12px 60px rgba(0,0,0,0.55)}
+  header{display:flex;align-items:center;gap:12px}
+  .logo{font-weight:800;letter-spacing:2px;color:var(--accent);
+    padding:6px 10px;border-radius:8px;background:rgba(93,243,122,0.06);
+    border:1px solid rgba(93,243,122,0.2)}
+  .scan{color:var(--muted);font-size:12px}
+  .grid{background-image:linear-gradient(rgba(50,201,90,0.08) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(50,201,90,0.08) 1px,transparent 1px);
+        background-size:24px 24px; border-radius:10px; border:1px solid rgba(93,243,122,0.12)}
+  .card{background:var(--card);padding:14px;border-radius:10px;border:1px solid rgba(93,243,122,0.15);margin-top:12px}
+  label{width:170px;color:var(--muted);font-size:13px}
+  input, select, textarea{flex:1;padding:10px;border-radius:8px;background:transparent;
+    border:1px dashed rgba(93,243,122,0.25);color:inherit;outline:none}
+  textarea{resize:vertical}
+  form.row{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+  .btn{background:linear-gradient(180deg,var(--accent),var(--accent2));
+    border:none;padding:10px 14px;border-radius:8px;color:#041006;font-weight:800;cursor:pointer}
+  .btn.ghost{background:transparent;border:1px solid rgba(93,243,122,0.33);color:var(--text)}
+  .btn.danger{background:var(--danger);color:#fff}
+  .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .small{font-size:12px;color:var(--muted)}
+  .docs{display:grid;gap:10px}
+  .doc{padding:12px;border-radius:8px;border:1px solid rgba(93,243,122,0.15);
+       background:linear-gradient(180deg,rgba(50,201,90,0.05),rgba(0,0,0,0.05))}
+  .tag{display:inline-block;padding:2px 8px;border-radius:999px;border:1px solid rgba(93,243,122,0.3);font-size:12px;color:var(--accent)}
+  .modal-back{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;z-index:60}
+  .modal{width:820px;max-width:95%;background:var(--panel);padding:16px;border-radius:10px;border:1px solid rgba(93,243,122,0.18)}
+  .hidden{display:none}
+  .lang-select{padding:8px;border-radius:8px;background:transparent;border:1px solid rgba(93,243,122,0.22);color:inherit}
+  .sidebar{width:280px}
+  .cat-item{padding:8px;border-radius:8px;background:rgba(50,201,90,0.05);border:1px solid rgba(93,243,122,0.12);cursor:pointer;margin-bottom:6px}
+  .cat-item.active{outline:2px solid rgba(93,243,122,0.35)}
+  .hr{height:1px;background:linear-gradient(90deg,transparent,rgba(93,243,122,0.35),transparent);margin:10px 0}
+</style>
 </head>
 <body>
 <div class="wrap grid">
